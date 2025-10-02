@@ -1,9 +1,27 @@
-object pepita {
-  var energy = 100
+object empresa{
+ var empleados = #{}
 
-  method energy() = energy
-
-  method fly(minutes) {
-    energy = energy - minutes * 3
+ method empleados(conjuntoEmpleado){
+  empleados = conjuntoEmpleado
+ }
+  method contratar(unMensajero){
+   empleados.add(unMensajero)
   }
+  method despedir(unMensajero){
+ empleados.remove(unMensajero)
+  }
+ method despedirATodos(){
+   empleados.clear()
+ }
+method esGrande(){
+  empleados.size()
+}
+method puedeSerEntregado(unMensajero){
+  empleados.first({unMensajero.puedeSerEntregado()})
+}
+
+method pesoDeUnEmpleado(unMensajero){
+  empleados.last({unMensajero.peso()})
+}
+ 
 }
